@@ -1,8 +1,10 @@
 import { useEffect, useState, useCallback } from "react";
 import Button from "./Button/Button";
 import Modal from "./Modal/modal";
+import useInput from "../hooks/useInput";
 
 export default function EffectsSection() {
+  const input = useInput();
   const [modal, setModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState([]);
@@ -57,11 +59,20 @@ export default function EffectsSection() {
       {loading && <p>Loading...</p>}
 
       {!loading && (
-        <ul>
-          {users.map((user) => (
-            <li key={user.id}>{user.name}</li>
-          ))}
-        </ul>
+        <>
+          <input type="text" className="control" {...input} />
+
+          <ul>
+            {users
+              .filter((user) =>
+                user.name.toLowerCase().includes(input.value.toLowerCase())
+              )
+              .map((user) => (
+                <li key={user.id}>{user.name}</li>
+              ))}
+              
+          </ul>
+        </>
       )}
     </section>
   );
