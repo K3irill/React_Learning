@@ -36,7 +36,7 @@ export default function CarCreateForm({ setCarsData }) {
 				type='text'
 				placeholder='Image'
 			/>
-			<button onClick={e => createCar(e)}>Click</button>
+			<button onClick={e => createCar(e)}>Add your car</button>
 		</form>
 	)
 }
