@@ -3,13 +3,14 @@ import { cars } from './cars.data.js'
 import CarItem from './car-item/CarItem.jsx'
 import { useEffect, useMemo, useState } from 'react'
 import CarCreateForm from './car-create-form/CarCreateForm.jsx'
-import axios from 'axios'
+import { CarService } from '../../../services/car.services.js'
+
 function Home() {
 	const [carsData, setCarsData] = useState([])
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const response = await axios.get('http://localhost:5172/cars')
+			const response = await CarService.getAll()
 
 			setCarsData(response.data)
 		}
