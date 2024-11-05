@@ -5,5 +5,19 @@
 body {
 	background-color: #111111;
 	color: whitesmoke;
-	padding: 30px 20px;
+	padding: 30px 15px;
+	max-width: 600px;
+	margin: 0 auto;
+}
+.btn {
+	padding: 6px 40px;
+	border: none;
+	outline: none;
+	text-decoration: none;
+	background-color: cadetblue;
+	color: azure;
+	cursor: pointer;
+}
+.btn:hover {
+	opacity: 0.8;
 }

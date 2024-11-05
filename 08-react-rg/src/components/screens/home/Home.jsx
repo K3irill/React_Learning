@@ -4,6 +4,7 @@ import CarItem from './car-item/CarItem.jsx'
 import { useEffect, useMemo, useState } from 'react'
 import CarCreateForm from './car-create-form/CarCreateForm.jsx'
 import { CarService } from '../../../services/car.services.js'
+import { useNavigate } from 'react-router-dom'
 
 function Home() {
 	const [carsData, setCarsData] = useState([])
@@ -16,6 +17,10 @@ function Home() {
 		}
 		fetchData()
 	}, [])
+
+	//Ещё вариант навигации
+	// const nav = useNavigate()
+	// <button onclick={()=> nav('/car/1')}>Перейти</button>
 
 	return (
 		<div>
