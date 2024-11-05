@@ -28,10 +28,16 @@ function App() {
 			})}
 
 			{modal && (
-				<Modal text='Creating product'>
+				<Modal text='Creating product' onClose={() => setModal(false)}>
 					<CreateProduct onCreate={createHandler}></CreateProduct>
 				</Modal>
 			)}
+			<button
+				className='bg-blue-500 text-white py-2 px-4 border'
+				onClick={() => setModal(true)}
+			>
+				Create product
+			</button>
 		</div>
 	)
 }

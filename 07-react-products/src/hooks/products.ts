@@ -16,6 +16,7 @@ export function useProducts() {
 				const response = await fetch('https://fakestoreapi.com/products')
 				if (!response.ok) throw new Error('Ошибка загрузки данных')
 				const data = await response.json()
+
 				setProducts(data)
 			} catch (err) {
 				setError((err as Error).message)
