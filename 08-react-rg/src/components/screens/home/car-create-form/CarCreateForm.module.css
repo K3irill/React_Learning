@@ -1,0 +1,21 @@
+.form {
+	margin: 10px auto 30px;
+}
+.form input {
+	padding: 5px 10px;
+	border: none;
+	outline: none;
+	border: 3px solid transparent;
+}
+.form input:focus {
+	border: 3px solid rgb(20, 151, 75);
+}
+button {
+	color: white;
+	padding: 7px 25px;
+	background-color: rgb(20, 151, 75);
+	cursor: pointer;
+}
+button:hover {
+	opacity: 0.8;
+}
