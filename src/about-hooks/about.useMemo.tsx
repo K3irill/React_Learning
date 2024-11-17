@@ -1,8 +1,12 @@
 import React, { useMemo, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 
 const AboutUseMemo = () => {
 	const [count, setCount] = useState(0)
 	const [inputValue, setInputValue] = useState('')
+	const location = useLocation()
+
+	console.log(location)
 
 	const computedValue = useMemo(() => {
 		console.log('Выполнение вычислений...')

@@ -3,14 +3,15 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
 import Greeting from './components/Greeting'
 import AboutUseState from './about-hooks/about.useState'
 import AboutUseEffect from './about-hooks/about.useEffect'
-import ControlledForm from './forms/controlledForm'
+import ControlledForm from './forms/ControlledForm'
 import TodoList from './forms/todoList'
 import AboutUseRef from './about-hooks/about.useRef'
 import AboutUseMemo from './about-hooks/about.useMemo'
 import AboutUseCallback from './about-hooks/about.useCallback'
 import { ThemeContext } from './about-hooks/about.useContext'
-
+import UserProfile from './routes/about.useParams'
 import './App.css'
+import AboutUseNavigate from './routes/about.useNavigate'
 interface user {
 	name: string
 	age: number
@@ -53,6 +54,9 @@ const App: React.FC = () => {
 							<Link to='/'>Home</Link>
 						</li>
 						<li>
+							<Link to={`/profile/${user.name}`}>Profile</Link>
+						</li>
+						<li>
 							<Link to='/about-use-state'>useState</Link>
 						</li>
 						<li>
@@ -73,6 +77,9 @@ const App: React.FC = () => {
 						<li>
 							<Link to='/todo-list'>todoList</Link>
 						</li>
+						<li>
+							<Link to='/about-use-navigate'>useNavigate</Link>
+						</li>
 					</ul>
 				</nav>
 				<button onClick={toggleTheme}>Toggle Theme</button>
@@ -84,6 +91,8 @@ const App: React.FC = () => {
 							<Greeting name={user.name} age={user.age} hobby={user.hobby} />
 						}
 					></Route>
+					<Route path='/profile/:username' element={<UserProfile />}></Route>
+					<Route path='/about-use-navigate' element={<AboutUseNavigate />} />
 					<Route path='/about-use-state' element={<AboutUseState />}></Route>
 					<Route path='/about-use-effect' element={<AboutUseEffect />}></Route>
 					<Route path='/about-use-ref' element={<AboutUseRef />}></Route>
