@@ -31,7 +31,8 @@ const AboutUseEffect = () => {
 
 	return (
 		<div>
-			<h1>Прошло времени: {seconds} секунд</h1>
+			<h1>about.useEffect</h1>
+			<h2>Прошло времени: {seconds} секунд</h2>
 			{!isStarted ? (
 				<button onClick={() => startTimer()}>Старт!</button>
 			) : (

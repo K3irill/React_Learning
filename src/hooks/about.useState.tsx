@@ -26,13 +26,14 @@ const AboutUseState = () => {
 	}
 	return (
 		<div>
+			<h1>about.useState</h1>
 			<h2>Счетчик: {count}</h2>
 			{message && <p style={{ color: 'red' }}>{message}</p>}
 			<div>
 				<button onClick={increment} disabled={count >= 10}>
 					Увеличить
 				</button>
-				<button onClick={decrement} disabled={count <= 10}>
+				<button onClick={decrement} disabled={count <= 0}>
 					Уменьшить
 				</button>
 			</div>
