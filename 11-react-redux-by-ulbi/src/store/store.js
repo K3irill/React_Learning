@@ -1,12 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { cashReducer } from './cashReducer'
-import { customersReducer } from './customersReducer'
+import { cashReducer } from './reducers/cashReducer'
+import { customersReducer } from './reducers/customersReducer'
 import { composeWithDevTools } from '@redux-devtools/extension'
+import { thunk } from 'redux-thunk'
 
 export const store = configureStore({
 	reducer: {
 		cash: cashReducer,
 		customers: customersReducer,
 	},
-	composeWithDevTools,
+	middleware: getDefaultMiddleware => getDefaultMiddleware().concat(thunk),
 })
